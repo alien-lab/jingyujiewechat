@@ -3,7 +3,7 @@
 
 // Declare app level module which depends on views, and components
     angular.module('jingyujie', [
-        "ui.router"
+        "ui.router",'toaster',"ngAnimate"
     ]).
     config(['$stateProvider', '$locationProvider', '$urlRouterProvider',
         function($stateProvider,$locationProvider,$urlRouterProvider) {//路由定义
@@ -15,6 +15,7 @@
                     controller: 'artlistController'
                 })
                 .state('artinfo', {
+                    params:{art:null},
                     url: '/artinfo',
                     templateUrl: 'views/artinfo.html',
                     controller: 'artinfoController'

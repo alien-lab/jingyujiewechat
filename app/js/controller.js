@@ -4,7 +4,7 @@
 (function(){
     'use strict';
     var jingyujie=angular.module("jingyujie");
-    jingyujie.controller("artlistController",["$scope","artService",function($scope,artService){
+    jingyujie.controller("artlistController",["$scope","artService","$state",function($scope,artService,$state){
         $scope.title="艺术品列表";
         $scope.artlist=[];
         function loadArtList(){
@@ -15,19 +15,20 @@
         }
         loadArtList();
         $scope.loadArtList=loadArtList;
+        $scope.artClick=function(art){
+            $state.go("artinfo",{art:art});
+        }
     }]);
 
-    jingyujie.controller("artinfoController",["$scope",function($scope){
+    jingyujie.controller("artinfoController",["$scope","$state","$stateParams","toaster",function($scope,$state,$stateParams,toaster){
         $scope.title="艺术品明细";
-        $scope.art={
-            id:1,
-            name:"春色之美",
-            author:"金成哲",
-            date:"2017-04-05",
-            price:"20000",
-            pic:"../image/default.jpg",
-            desc:"材料：布面油画,尺寸：40X50cm,年代：2015年,签名：金成哲（韩文）,品相：完好",
-            details:[]
+        $scope.art=$stateParams.art;
+        if($scope.art==null){
+            toaster.pop('error', "错误提示", "参数传递错误");
+        }
+        console.log($stateParams,$scope)
+        $scope.goList=function(){
+            $state.go("artlist");
         }
     }]);
 

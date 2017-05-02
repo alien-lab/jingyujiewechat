@@ -40,7 +40,7 @@
     </div>
 </nav>
 <ul class="row normal_list" >
-    <li class="col-md-12" ng-repeat="art in artlist">
+    <li class="col-md-12" ng-repeat="art in artlist" ng-click="artClick(art)">
         <div class="list_pic"><img ng-src="{{art.pic}}" alt="艺术品图片"></div>
         <div class="list_info">
             <div class="list_name">{{art.name}}</div>

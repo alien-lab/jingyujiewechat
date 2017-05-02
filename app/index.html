@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="bower_components/AngularJS-Toaster/toaster.min.css">
   <link rel="stylesheet" href="app.css">
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
@@ -26,15 +27,18 @@
       <p class="browsehappy">您使用的浏览器已经 <strong>过时</strong> . 请 <a href="http://browsehappy.com/">更新您的浏览器</a> ，获得更好的体验.</p>
   <![endif]-->
 
-  <div ui-view></div>
-
+  <div ui-view>
+  </div>
+  <toaster-container toaster-options="{'animation-class': 'toast-top-center'}"></toaster-container>
   <!--<div>Angular seed app: v<span app-version></span></div>-->
 
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
   -->
   <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.js"></script>
   <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+  <script src="bower_components/AngularJS-Toaster/toaster.min.js"></script>
   <script src="app.js"></script>
   <script src="js/controller.js"></script>
   <script src="js/service.js"></script>
