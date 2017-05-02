@@ -1,0 +1,35 @@
+<style>
+    .item_pic{
+        width:100%;
+        height:auto;
+    }
+    .item_pic img{
+        width:100%;
+    }
+    #container{
+        margin-top:51px;
+        margin-bottom:51px;
+        padding:5px;
+    }
+</style>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="navbar-brand">
+        {{art.name}}
+    </div>
+</nav>
+<div id="container">
+    <div class="item_pic"><img ng-src="{{art.pic}}" alt="艺术品图片"></div>
+    <h4>{{art.author}}</h4>
+    <p class="lead">{{art.desc}}</p>
+    <div class="devide"></div>
+</div>
+
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container" style="padding:0;">
+        <div type="button" style="width:40%; cursor:pointer; height:50px;line-height:50px;text-align:center;margin:0;border:none;background:#265a88;color:#fff;float:left;"><span class="glyphicon glyphicon-heart"></span>收藏</div>
+        <div type="button" style="width:60%;cursor:pointer;height:50px;line-height:50px;text-align:center;margin:0;border:none;background:#ed9e2d;color:#fff;float:right;"><span class="glyphicon glyphicon-yen"></span>立即购买</div>
+        <div style="clear:both;"></div>
+    </div>
+</nav>
+

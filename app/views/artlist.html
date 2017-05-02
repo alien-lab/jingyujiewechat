@@ -1,0 +1,52 @@
+<style>
+.normal_list{
+    list-style: none;
+    margin:0;
+    padding:0;
+    margin-top:51px;
+}
+.normal_list li{
+    margin:0;
+    padding:0;
+    margin-bottom:10px;
+}
+.normal_list .list_pic{
+    width:100%;
+    height:auto;
+}
+.normal_list .list_pic img{
+    width:100%;
+}
+.normal_list .list_info{
+    width:100%;
+    height:auto;
+}
+.normal_list .list_name{
+    width:100%;
+    text-align: center;
+    padding:10px 0;
+    font-size:180%;
+    font-weight:500;
+}
+.normal_list .list_desc{
+    width:100%;
+    text-align: center;
+    padding:0 5px;
+}
+</style>
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="navbar-brand">
+        艺术品列表
+    </div>
+</nav>
+<ul class="row normal_list" >
+    <li class="col-md-12" ng-repeat="art in artlist">
+        <div class="list_pic"><img ng-src="{{art.pic}}" alt="艺术品图片"></div>
+        <div class="list_info">
+            <div class="list_name">{{art.name}}</div>
+            <div class="list_desc">{{art.author}}|{{art.date|date:'yyyy年M月'}}|{{art.price|currency:'￥'}}</div>
+            <div class="list_desc">{{art.desc}}</div>
+        </div>
+
+    </li>
+</ul>
